@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defintion'
+define service ZRAP_UI_BOOKING_V01 {
+  expose ZRAP_BOOKING_V01;
+}

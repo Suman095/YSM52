@@ -1,0 +1,46 @@
+unmanaged implementation in class zbp_i_sm_trav_v1 unique;
+//strict ( 2 );
+
+define behavior for ZI_SM_Trav_v1 alias Travel
+//late numbering
+lock master
+//authorization master ( instance )
+etag master LastChangedAt
+{
+
+  field ( readonly ) TravelID, TotalPrice;
+  field ( mandatory ) AgencyID, CustomerID, BeginDate, EndDate;
+  create;
+  update;
+  delete;
+  action ( features : instance ) set_status_booked result [1] $self;
+  association _Booking { create ( features : instance ); }
+}
+
+define behavior for ZI_SM_Book_v1 alias Booking
+implementation in class zbp_i_sm_booking_v1 unique
+//late numbering
+lock dependent by _Travel
+//authorization dependent by _Travel
+//etag master <field_name>
+etag dependent by _Travel
+{
+
+  field ( readonly ) TravelID, BookingID;
+  field ( mandatory ) BookingDate, CustomerID, AirlineID, ConnectionID, FlightDate;
+  update;
+  delete;
+  association _Travel;
+  mapping for /dmo/booking control /dmo/s_booking_intx
+  {
+    BookingID = booking_id;
+    AirlineID = carrier_id;
+    BookingDate = booking_date;
+    ConnectionID = connection_id;
+    CurrencyCode = currency_code;
+    CustomerID = customer_id;
+    FlightDate = flight_date;
+    FlightPrice = flight_price;
+    TravelID = travel_id;
+  }
+}

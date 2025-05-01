@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defintion'
+define service ZUI_RAP_BOOK_V01 {
+  expose zi_rap_book_v01;
+}
