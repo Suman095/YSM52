@@ -6,6 +6,7 @@ CLASS yyrap_dataload DEFINITION
   PUBLIC SECTION.
 
     INTERFACES if_oo_adt_classrun .
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -26,6 +27,7 @@ CLASS yyrap_dataload IMPLEMENTATION.
     " insert travel demo data
 
     INSERT yyrap_travel FROM (
+*    INSERT yma_travel_v1 FROM (
 
     SELECT
 

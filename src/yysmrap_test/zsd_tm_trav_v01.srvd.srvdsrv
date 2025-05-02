@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defintion'
+define service ZSD_TM_Trav_v01 {
+  expose ZI_Conn_TM_v1 as connection;
+}
