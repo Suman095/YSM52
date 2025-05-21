@@ -10,7 +10,7 @@ ENDCLASS.
 
 
 
-CLASS zjp_book_data_v01 IMPLEMENTATION.
+CLASS ZJP_BOOK_DATA_V01 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

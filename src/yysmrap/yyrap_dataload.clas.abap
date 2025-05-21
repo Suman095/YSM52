@@ -13,7 +13,7 @@ ENDCLASS.
 
 
 
-CLASS yyrap_dataload IMPLEMENTATION.
+CLASS YYRAP_DATALOAD IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -3,8 +3,7 @@
 {
 "FROM":
 [
-"ZI_BOOKING_DATE",
-"YYRAP_TRAVEL"
+"YYRAP_BOOK"
 ],
 "ASSOCIATED":
 [],
